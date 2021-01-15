@@ -15,4 +15,4 @@ height = float(input("Enter height: "))
 
 area = length * width * height
 
-print(f"The area of the rectangle is {area} in.")
+print(f"The volume of the rectangular prism is {area} in.")
