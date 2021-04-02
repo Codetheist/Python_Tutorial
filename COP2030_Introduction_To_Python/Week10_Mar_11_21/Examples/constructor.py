@@ -23,7 +23,7 @@ mydog2 = Dog('Rover', 'Lab')
 mydog2.say_hello()"""
 
 
-class Car:
+"""class Car:
     def __init__(self):
         self.gear = 0
 
@@ -46,4 +46,38 @@ mycar.shift_down()
 mycar.print_state()
 
 mycar.shift_up()
-mycar.print_state()
+mycar.print_state()"""
+
+
+class Animal:
+
+    def __init__(self, w, a):
+        self.weight = w
+        self.age = a
+
+# Inheritance from the Animal class and its args
+
+
+class Cat(Animal):
+
+    def speak(self):
+        print('Meow')
+        print(f'My age is {self.age}')
+        print(f'My weight is {self.weight}')
+
+
+class Dog(Animal):
+
+    def speak(self):
+        print('Bark')
+        print(f'My age is {self.age}')
+        print(f'My weight is {self.weight}')
+
+
+mycat = Cat(9, 3)
+mycat.speak()
+
+print()
+
+mydog = Dog(50, 5)
+mydog.speak()
