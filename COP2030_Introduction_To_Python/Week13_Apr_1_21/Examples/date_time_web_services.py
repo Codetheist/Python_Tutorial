@@ -4,20 +4,20 @@ from datetime import datetime, timedelta
 import requests
 
 #t = time.time()
-#print(t)
+# print(t)
 
 #now = datetime.now()
 #expires = datetime(2021, 3, 25)
 
-#if now > expires:
+# if now > expires:
 #    print("Item expired")
-#else:
+# else:
 #    print("Item not expired")
 
 #now = datetime.now()
 #tomorrow = now + timedelta(days=1)
 
-#print(tomorrow)
+# print(tomorrow)
 
 # Look up real python website
 # Learning about web services
@@ -28,16 +28,16 @@ url = f'{base_url}/{resource}'
 
 response = requests.get(url)
 print(response.status_code)
-#print(response.content)
+# print(response.content)
 data = response.json()
 print(data[0])
 
-#GET
-#for post in data:
+# GET
+# for post in data:
 #    title = post['title']
 #    print(f'Title: {title}')
 
-#POST
+# POST
 blog_post = {
     'title': 'Hello Word',
     'body': 'This is the post body',
