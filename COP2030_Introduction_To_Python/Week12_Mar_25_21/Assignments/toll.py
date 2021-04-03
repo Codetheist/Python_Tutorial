@@ -10,6 +10,35 @@
 # ******************************************************************************************************
 
 # Create a TollBooth class.
+class TollBooth:
+    def __init__(self, lpn):
+        self.vehicles = lpn
+        self.total_price = 0.0
+        self.total_vehicles = 0
+
+    # The class will have a function/method called
+
+    # lpn is short for license plate number
+    def charge_toll(self, lpn):
+        #expires = self.vehicles[lpn]['expires']
+        # if expires < 100:
+        #    raise ValueError('License plate expires')
+        car_charge = 1.00
+        truck_chage = 1.50
+        vehcile_type = self.vehicles[lpn]['type']
+
+        for vehicle in vehicles.values():
+            if vehicle == "car":
+                self.total_price += car_charge
+            elif vehicle == "truck":
+                self.total_price += truck_chage
+            else:
+                license_plate = 'No more vehicles.'
+
+    def __str__(self):
+        s = f'Total price is ${self.total_price} and the total of vehicles {self.total_vehicles}'
+        return s
+
 
 # Use the following dictionary to represent all the vehicles
 vehicles = {
@@ -27,10 +56,11 @@ vehicles = {
     },
 }
 
-# The class will have a function/method called
-
-# lpn is short for license plate number
-
-
-def charge_toll(self, lpn):
-    name = 0
+try:
+    check_plate = TollBooth(vehicles)
+    check_plate.charge_toll('car')
+    check_plate.charge_toll('truck')
+    print(check_plate)
+except ValueError as e:
+    print('Could not shift')
+    print(e)
