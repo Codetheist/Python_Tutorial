@@ -20,20 +20,20 @@ class TollBooth:
 
     # lpn is short for license plate number
     def charge_toll(self, lpn):
-        #expires = self.vehicles[lpn]['expires']
-        # if expires < 100:
-        #    raise ValueError('License plate expires')
+        expires = self.vehicles[lpn]['expires']
+        if expires < 100:
+            raise ValueError('License plate expires')
         car_charge = 1.00
         truck_chage = 1.50
         vehcile_type = self.vehicles[lpn]['type']
-
-        for vehicle in vehicles.values():
-            if vehicle == "car":
-                self.total_price += car_charge
-            elif vehicle == "truck":
-                self.total_price += truck_chage
-            else:
-                license_plate = 'No more vehicles.'
+        
+        if vehcile_type == "car":
+            self.total_price += car_charge
+            self.total_vehicles += 1
+        
+        if vehcile_type == "truck":
+            self.total_price += truck_chage
+            self.total_vehicles += 1
 
     def __str__(self):
         s = f'Total price is ${self.total_price} and the total of vehicles {self.total_vehicles}'
@@ -58,9 +58,10 @@ vehicles = {
 
 try:
     check_plate = TollBooth(vehicles)
-    check_plate.charge_toll('car')
-    check_plate.charge_toll('truck')
+    check_plate.charge_toll("ABC746")
+    check_plate.charge_toll('ZZA398')
+    check_plate.charge_toll('BFH918')
     print(check_plate)
 except ValueError as e:
-    print('Could not shift')
+    print('Could not find')
     print(e)
